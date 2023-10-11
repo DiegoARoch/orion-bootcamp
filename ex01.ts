@@ -1,15 +1,15 @@
 function contarVogais(palavra: string) {
-    let letras = palavra
+    let letras: string = palavra
     const palavraSeparada: string[] = letras.toLowerCase().split("")
-    let cont = 0
+    let contador: number = 0
 
     for(const a of palavraSeparada) {
         if("aeiou".includes(a)) {
-            cont++
+            contador++
         }
     }
 
-    return cont
+    return contador
 }
 
 const resultado = contarVogais("Diego")

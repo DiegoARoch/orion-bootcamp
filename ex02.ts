@@ -17,9 +17,9 @@ const listaDePessoas : Pessoas[] = [...lista]
 //console.log(listaDePessoas)
 
 function pegarBioPeloID(id: number): string | null {
-    const pessoa = listaDePessoas.find((item) => item.id === id)
+    const pessoa = listaDePessoas.find((item) => item.id === id) //funcional
 
-    if (pessoa) {
+    if (pessoa) { // Imperativo
         return pessoa.bio;
     } else {
         return null;
@@ -31,9 +31,9 @@ function pegarBioPeloID(id: number): string | null {
 //b) Crie uma função que retorne o name do id passado
 
 function pegarNomePeloID(id: number): string | null {
-    const pessoa = listaDePessoas.find((item) => item.id === id)
+    const pessoa = listaDePessoas.find((item) => item.id === id) //funcional
 
-    if (pessoa) {
+    if (pessoa) { // Imperativo
         return pessoa.name;
     } else {
         return null;
@@ -45,9 +45,9 @@ function pegarNomePeloID(id: number): string | null {
 //c) Crie uma função que apague um item da lista a partir de um id passado
 
 function apagarItemPeloID(id: number): void {
-    for (let i = 0; i < listaDePessoas.length; i++) {
+    for (let i = 0; i < listaDePessoas.length; i++) { //imperativo
         if (listaDePessoas[i].id === id) {
-            listaDePessoas.splice(i, 1);
+            listaDePessoas.splice(i, 1);//splice funcional
             break;
         }
     }
@@ -59,9 +59,9 @@ function apagarItemPeloID(id: number): void {
 // d) Crie uma função que altere a bio ou o name a partir de um id passado
 
 function alterarItemPeloID(id: number, novoNome?: string, novaBio?: string): void {
-    const pessoa = listaDePessoas.find((item) => item.id === id)
+    const pessoa = listaDePessoas.find((item) => item.id === id)//funcional
 
-    if (pessoa) {
+    if (pessoa) { //imperativo
         if (novoNome !== undefined) {
             pessoa.name = novoNome;
         }
@@ -71,5 +71,10 @@ function alterarItemPeloID(id: number, novoNome?: string, novaBio?: string): voi
     }
 }
 
-alterarItemPeloID(2, "Eric Clapton")
-console.log(listaDePessoas)
+//const bioClapton: string = "Eric Clapton é um renomado músico britânico nascido em 30 de março de 1945 em Ripley, Surrey, Inglaterra. Ele é amplamente considerado um dos maiores guitarristas de todos os tempos e é conhecido por sua carreira solo de sucesso, bem como por seu trabalho com várias bandas e músicos notáveis."
+
+//alterarItemPeloID(2, undefined, bioClapton)
+//console.log(listaDePessoas)
+
+//alterarItemPeloID(2, "Eric Clapton", bioClapton)
+//console.log(listaDePessoas)

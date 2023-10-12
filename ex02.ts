@@ -55,3 +55,21 @@ function apagarItemPeloID(id: number): void {
 
 //apagarItemPeloID(2)
 //console.log(listaDePessoas)
+
+// d) Crie uma função que altere a bio ou o name a partir de um id passado
+
+function alterarItemPeloID(id: number, novoNome?: string, novaBio?: string): void {
+    const pessoa = listaDePessoas.find((item) => item.id === id)
+
+    if (pessoa) {
+        if (novoNome !== undefined) {
+            pessoa.name = novoNome;
+        }
+        if (novaBio !== undefined) {
+            pessoa.bio = novaBio;
+        }
+    }
+}
+
+alterarItemPeloID(2, "Eric Clapton")
+console.log(listaDePessoas)

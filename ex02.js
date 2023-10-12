@@ -27,7 +27,7 @@ function pegarNomePeloID(id) {
         return null;
     }
 }
-console.log(pegarNomePeloID(1));
+//console.log(pegarNomePeloID(1))
 //c) Crie uma função que apague um item da lista a partir de um id passado
 function apagarItemPeloID(id) {
     for (let i = 0; i < listaDePessoas.length; i++) {
@@ -37,5 +37,19 @@ function apagarItemPeloID(id) {
         }
     }
 }
-apagarItemPeloID(2);
+//apagarItemPeloID(2)
+//console.log(listaDePessoas)
+// d) Crie uma função que altere a bio ou o name a partir de um id passado
+function alterarItemPeloID(id, novoNome, novaBio) {
+    const pessoa = listaDePessoas.find((item) => item.id === id);
+    if (pessoa) {
+        if (novoNome !== undefined) {
+            pessoa.name = novoNome;
+        }
+        if (novaBio !== undefined) {
+            pessoa.bio = novaBio;
+        }
+    }
+}
+alterarItemPeloID(2, "Eric Clapton");
 console.log(listaDePessoas);

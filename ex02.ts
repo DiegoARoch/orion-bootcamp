@@ -42,4 +42,16 @@ function pegarNomePeloID(id: number): string | null {
 
 console.log(pegarNomePeloID(1))
 
+//c) Crie uma função que apague um item da lista a partir de um id passado
 
+function apagarItemPeloID(id: number): void {
+    for (let i = 0; i < listaDePessoas.length; i++) {
+        if (listaDePessoas[i].id === id) {
+            listaDePessoas.splice(i, 1);
+            break;
+        }
+    }
+}
+
+apagarItemPeloID(2)
+console.log(listaDePessoas)

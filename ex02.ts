@@ -40,7 +40,7 @@ function pegarNomePeloID(id: number): string | null {
     }
 }
 
-console.log(pegarNomePeloID(1))
+//console.log(pegarNomePeloID(1))
 
 //c) Crie uma função que apague um item da lista a partir de um id passado
 
@@ -53,5 +53,5 @@ function apagarItemPeloID(id: number): void {
     }
 }
 
-apagarItemPeloID(2)
-console.log(listaDePessoas)
+//apagarItemPeloID(2)
+//console.log(listaDePessoas)

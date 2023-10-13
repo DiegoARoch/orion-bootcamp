@@ -142,5 +142,35 @@ function apagarItemPeloIDImperativo(id: number): void {
 
 //QUESTÃO D - FUNCIONAL
 
+function alterarItemPeloIDFuncional(id: number, novoNome?: string, novaBio?: string): void {
+    const pessoaIndex = listaDePessoas.findIndex((item) => item.id === id);
+
+    if (pessoaIndex !== -1) {
+        listaDePessoas[pessoaIndex] = {
+            ...listaDePessoas[pessoaIndex],
+            name: novoNome ?? listaDePessoas[pessoaIndex].name,
+            bio: novaBio ?? listaDePessoas[pessoaIndex].bio,
+        };
+    }
+}
+
+//QUESTÃO D - IMPERATIVO
+
+function alterarItemPeloIDImperativo(id: number, novoNome?: string, novaBio?: string): void {
+    for (let i = 0; i < listaDePessoas.length; i++) {
+        if (listaDePessoas[i].id === id) {
+            if (novoNome !== undefined) {
+                listaDePessoas[i].name = novoNome;
+            }
+            if (novaBio !== undefined) {
+                listaDePessoas[i].bio = novaBio;
+            }
+            break;
+        }
+    }
+}
+
+
+
 
 

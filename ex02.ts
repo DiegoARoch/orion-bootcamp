@@ -117,3 +117,21 @@ function pegarNomePeloIDImperativo(id: number): string | null {
     return null;
 }
 
+//QUESTÃO C - FUNCIONAL
+
+//QUESTÃO C - IMPERATIVO
+
+function apagarItemPeloIDImperativo(id: number): void {
+    for (let i = 0; i < listaDePessoas.length; i++) {
+        if (listaDePessoas[i].id === id) {
+            for (let j = i; j < listaDePessoas.length - 1; j++) {
+                listaDePessoas[j] = listaDePessoas[j + 1];
+            }
+            listaDePessoas.length--;
+            break;
+        }
+    }
+}
+
+
+

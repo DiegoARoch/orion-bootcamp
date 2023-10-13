@@ -99,4 +99,21 @@ function pegarBioPeloIDImperativo(id: number): string | null {
     return null;
 }
 
-//
+//QUESTÃO B - FUNCIONAL
+
+function pegarNomePeloIDFuncional(id: number): string | null {
+    const pessoa = listaDePessoas.find((item) => item.id === id)
+    return pessoa ? pessoa.name : null;
+}
+
+//QUESTÃO B - IMPERATIVO
+
+function pegarNomePeloIDImperativo(id: number): string | null {
+    for (let i = 0; i < listaDePessoas.length; i++) {
+        if (listaDePessoas[i].id === id) {
+            return listaDePessoas[i].name;
+        }
+    }
+    return null;
+}
+

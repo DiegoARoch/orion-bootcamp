@@ -120,13 +120,11 @@ function pegarNomePeloIDImperativo(id: number): string | null {
 //QUESTÃO C - FUNCIONAL
 
 function apagarItemPeloIDFuncional(id: number): void {
-    for (let i = 0; i < listaDePessoas.length; i++) { //imperativo
-        if (listaDePessoas[i].id === id) {
-            listaDePessoas.splice(i, 1);//splice funcional
-            break;
-        }
-    }
+   const listaRemover = listaDePessoas.findIndex((pessoa) => pessoa.id === id)
+
+   listaRemover !== -1 && listaDePessoas.splice(listaRemover, 1)
 }
+
 
 //QUESTÃO C - IMPERATIVO
 
@@ -141,6 +139,8 @@ function apagarItemPeloIDImperativo(id: number): void {
         }
     }
 }
+
+//QUESTÃO D - FUNCIONAL
 
 
 

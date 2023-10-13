@@ -78,3 +78,25 @@ function alterarItemPeloID(id: number, novoNome?: string, novaBio?: string): voi
 
 //alterarItemPeloID(2, "Eric Clapton", bioClapton)
 //console.log(listaDePessoas)
+
+// e) Demonstre todas as funções com o paradigma funcional e com o imperativo
+
+//QUESTÂO A - FUNCIONAL
+
+function pegarBioPeloIDFuncional(id: number): string | null {
+    const pessoa = listaDePessoas.find((item) => item.id === id);
+    return pessoa ? pessoa.bio : null;
+}
+
+//QUESTÃO A - IMPERATIVO
+
+function pegarBioPeloIDImperativo(id: number): string | null {
+    for (let i = 0; i < listaDePessoas.length; i++) {
+        if (listaDePessoas[i].id === id) {
+            return listaDePessoas[i].bio;
+        }
+    }
+    return null;
+}
+
+//

@@ -1,6 +1,5 @@
 function contarVogais(palavra: string) {
-    const letras: string = palavra;
-    const palavraSeparada: string[] = letras.toLowerCase().split("");
+    const palavraSeparada: string[] = palavra.toLowerCase().split("");
     let contador: number = 0;
 
     for(let a of palavraSeparada) {
@@ -14,8 +13,7 @@ function contarVogais(palavra: string) {
 
 function suporteParaOClique() {
     const palavraInput: HTMLInputElement = document.querySelector('input#palavra').value;
-    const palavra: string = palavraInput;
-    const resultado: number = contarVogais(palavra);
+    const resultado: number = contarVogais(palavraInput);
     const resultadoElemento = document.querySelector('div#resultado');
 
     if (resultadoElemento) {

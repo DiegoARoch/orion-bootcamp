@@ -1,22 +1,27 @@
-function contarVogais() {
-    const palavraInput: HTMLInputElement = document.querySelector('input#palavra');
-    const resultado: HTMLDivElement = document.querySelector('div#resultado');
+function contarVogais(palavra: string) {
+    const letras: string = palavra;
+    const palavraSeparada: string[] = letras.toLowerCase().split("");
+    let contador: number = 0;
 
-    if (palavraInput && resultado) {
-        const palavra: string = palavraInput.value;
-        const palavraSeparada: string[] = palavra.toLowerCase().split("");
-        let contador: number = 0;
-
-        for (const letra of palavraSeparada) {
-            if ("aeiou".includes(letra)) {
-                contador++;
-            }
+    for(let a of palavraSeparada) {
+        if("aeiou".includes(a)) {
+            contador++;
         }
-
-        resultado.innerHTML = `Número de vogais é ${contador}`;
     }
+
+    return contador;
 }
 
+function suporteParaOClique() {
+    const palavraInput: HTMLInputElement = document.querySelector('input#palavra').value;
+    const palavra: string = palavraInput;
+    const resultado: number = contarVogais(palavra);
+    const resultadoElemento = document.querySelector('div#resultado');
+
+    if (resultadoElemento) {
+        resultadoElemento.innerHTML = `Número de vogais é ${resultado}`;
+    }
+}
 
 
 

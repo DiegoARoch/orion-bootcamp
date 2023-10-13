@@ -12,7 +12,7 @@ function contarVogais(palavra: string) {
 }
 
 function suporteParaOClique() {
-    const palavraInput: HTMLInputElement = document.querySelector('input#palavra').value;
+    const palavraInput = (document.getElementById('palavra') as HTMLInputElement).value;
     const resultado: number = contarVogais(palavraInput);
     const resultadoElemento = document.querySelector('div#resultado');
 

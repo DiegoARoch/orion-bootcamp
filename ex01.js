@@ -10,7 +10,7 @@ function contarVogais(palavra) {
     return contador;
 }
 function suporteParaOClique() {
-    const palavraInput = document.querySelector('input#palavra').value;
+    const palavraInput = document.getElementById('palavra').value;
     const resultado = contarVogais(palavraInput);
     const resultadoElemento = document.querySelector('div#resultado');
     if (resultadoElemento) {

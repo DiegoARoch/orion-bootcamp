@@ -12,7 +12,7 @@ interface Pessoas {
     bio: string;
 }
 
-const listaDePessoas : Pessoas[] = [...lista]
+const listaDePessoas = [...lista]
 
 //console.log(listaDePessoas)
 

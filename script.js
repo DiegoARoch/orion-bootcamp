@@ -85,7 +85,7 @@ function apagarItemPeloID(id) {
         }
     }
 }
-function apagarItemPorID() {
+function apagarItem() {
     const apagarId = parseInt(document.getElementById('apagarId').value);
     apagarItemPeloID(apagarId);
     const tabelaCorpo = document.getElementById('tabelaCorpo');
@@ -94,6 +94,33 @@ function apagarItemPorID() {
         const cells = linhas[i].getElementsByTagName('td');
         if (cells[0].innerHTML === apagarId.toString()) {
             tabelaCorpo.removeChild(linhas[i]);
+            break;
+        }
+    }
+}
+function alterarItemPeloID(id, novoNome, novaBio) {
+    const pessoa = listaDePessoas.find((item) => item.id === id);
+    if (pessoa) {
+        if (novoNome !== undefined) {
+            pessoa.name = novoNome;
+        }
+        if (novaBio !== undefined) {
+            pessoa.bio = novaBio;
+        }
+    }
+}
+function alterarItem() {
+    const alterarId = parseInt(document.getElementById('alterarId').value);
+    const novoNome = document.getElementById('novoNome').value;
+    const novaBio = document.getElementById('novaBio').value;
+    alterarItemPeloID(alterarId, novoNome, novaBio);
+    const tabelaCorpo = document.getElementById('tabelaCorpo');
+    const linhas = tabelaCorpo.getElementsByTagName('tr');
+    for (let i = 0; i < linhas.length; i++) {
+        const cells = linhas[i].getElementsByTagName('td');
+        if (cells[0].innerHTML === alterarId.toString()) {
+            cells[1].innerHTML = novoNome;
+            cells[2].innerHTML = novaBio;
             break;
         }
     }

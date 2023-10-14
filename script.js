@@ -77,3 +77,24 @@ function consultarNomePorID() {
         consultaNomeResultado.innerHTML = "Pessoa não encontrada.";
     }
 }
+function apagarItemPeloID(id) {
+    for (let i = 0; i < listaDePessoas.length; i++) {
+        if (listaDePessoas[i].id === id) {
+            listaDePessoas.splice(i, 1);
+            break;
+        }
+    }
+}
+function apagarItemPorID() {
+    const apagarId = parseInt(document.getElementById('apagarId').value);
+    apagarItemPeloID(apagarId);
+    const tabelaCorpo = document.getElementById('tabelaCorpo');
+    const linhas = tabelaCorpo.getElementsByTagName('tr');
+    for (let i = 0; i < linhas.length; i++) {
+        const cells = linhas[i].getElementsByTagName('td');
+        if (cells[0].innerHTML === apagarId.toString()) {
+            tabelaCorpo.removeChild(linhas[i]);
+            break;
+        }
+    }
+}

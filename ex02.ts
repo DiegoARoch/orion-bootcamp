@@ -85,7 +85,7 @@ function alterarItemPeloID(id: number, novoNome?: string, novaBio?: string): voi
 
 function pegarBioPeloIDFuncional(id: number): string | undefined {
     const pessoa = listaDePessoas.find((item) => item.id === id);
-    return pessoa ? pessoa.bio : null;
+    return pessoa ? pessoa.bio : undefined;
 }
 
 //QUESTÃO A - IMPERATIVO
@@ -96,14 +96,14 @@ function pegarBioPeloIDImperativo(id: number): string | undefined {
             return listaDePessoas[i].bio;
         }
     }
-    return null;
+    return undefined;
 }
 
 //QUESTÃO B - FUNCIONAL
 
 function pegarNomePeloIDFuncional(id: number): string | undefined {
     const pessoa = listaDePessoas.find((item) => item.id === id)
-    return pessoa ? pessoa.name : null;
+    return pessoa ? pessoa.name : undefined;
 }
 
 //QUESTÃO B - IMPERATIVO
@@ -114,7 +114,7 @@ function pegarNomePeloIDImperativo(id: number): string | undefined {
             return listaDePessoas[i].name;
         }
     }
-    return null;
+    return undefined;
 }
 
 //QUESTÃO C - FUNCIONAL
@@ -162,7 +162,7 @@ function alterarItemPeloIDImperativo(id: number, novoNome?: string, novaBio?: st
             if (novoNome) {
                 listaDePessoas[i].name = novoNome;
             }
-            if (novaBio) {
+            if (novaBio !== undefined) {
                 listaDePessoas[i].bio = novaBio;
             }
             break;

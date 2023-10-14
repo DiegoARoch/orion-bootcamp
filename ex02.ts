@@ -83,14 +83,14 @@ function alterarItemPeloID(id: number, novoNome?: string, novaBio?: string): voi
 
 //QUESTÂO A - FUNCIONAL
 
-function pegarBioPeloIDFuncional(id: number): string | null {
+function pegarBioPeloIDFuncional(id: number): string | undefined {
     const pessoa = listaDePessoas.find((item) => item.id === id);
     return pessoa ? pessoa.bio : null;
 }
 
 //QUESTÃO A - IMPERATIVO
 
-function pegarBioPeloIDImperativo(id: number): string | null {
+function pegarBioPeloIDImperativo(id: number): string | undefined {
     for (let i = 0; i < listaDePessoas.length; i++) {
         if (listaDePessoas[i].id === id) {
             return listaDePessoas[i].bio;
@@ -101,14 +101,14 @@ function pegarBioPeloIDImperativo(id: number): string | null {
 
 //QUESTÃO B - FUNCIONAL
 
-function pegarNomePeloIDFuncional(id: number): string | null {
+function pegarNomePeloIDFuncional(id: number): string | undefined {
     const pessoa = listaDePessoas.find((item) => item.id === id)
     return pessoa ? pessoa.name : null;
 }
 
 //QUESTÃO B - IMPERATIVO
 
-function pegarNomePeloIDImperativo(id: number): string | null {
+function pegarNomePeloIDImperativo(id: number): string | undefined {
     for (let i = 0; i < listaDePessoas.length; i++) {
         if (listaDePessoas[i].id === id) {
             return listaDePessoas[i].name;
@@ -120,9 +120,9 @@ function pegarNomePeloIDImperativo(id: number): string | null {
 //QUESTÃO C - FUNCIONAL
 
 function apagarItemPeloIDFuncional(id: number): void {
-   const listaRemover = listaDePessoas.findIndex((pessoa) => pessoa.id === id)
+   const listaRemover = listaDePessoas.findIndex((pessoa) => pessoa.id === id);
 
-   listaRemover !== -1 && listaDePessoas.splice(listaRemover, 1)
+   listaRemover !== -1 && listaDePessoas.splice(listaRemover, 1);
 }
 
 

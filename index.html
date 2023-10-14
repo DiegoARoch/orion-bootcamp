@@ -15,8 +15,36 @@
     </div>
 
     <h1>Exercício 02 - Manipulando um Array</h1>
-    <div>
-        
+    <div id="tabelaContainer">
+        <table id="minhaTabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Biografia</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaCorpo">
+            </tbody>
+        </table>
     </div>
+
+    <h2>Consultar Biografia por ID</h2>
+    <div>
+        <label for="consultaId">Consultar por ID:</label>
+        <input type="text" id="consultaId" name="consultaId">
+        <input type="button" value="Consultar" onclick="consultarBiografia()">
+        <div id="consultaResultado"></div>
+    </div>
+
+    <h2>Consultar Nome por ID</h2>
+    <div>
+        <label for="consultaNomeId">Consultar Nome por ID:</label>
+        <input type="text" id="consultaNomeId" name="consultaNomeId">
+        <input type="button" value="Consultar Nome" onclick="consultarNomePorID()">
+    <div id="consultaNomeResultado"></div>
+    </div>
+
+
 </body>
 </html>

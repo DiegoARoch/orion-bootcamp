@@ -17,7 +17,6 @@ function suporteParaOClique() {
         resultadoElemento.innerHTML = `Número de vogais é ${resultado}`;
     }
 }
-//let lista = [];
 function criarTabela() {
     const tabelaCorpo = document.getElementById('tabelaCorpo');
     for (let i = 0; i < listaDePessoas.length; i++) {

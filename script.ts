@@ -22,8 +22,6 @@ function suporteParaOClique() {
 }
 
 
-//let lista = [];
-
 function criarTabela() {
     const tabelaCorpo= (<HTMLTableElement>document.getElementById('tabelaCorpo'));
 

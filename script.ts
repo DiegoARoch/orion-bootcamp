@@ -21,7 +21,7 @@ function suporteParaOClique() {
     }
 }
 
-let lista: Object = [
+let lista: Array = [
     { "id": 1, "name": "Ada Lovelace", "bio": "Ada Lovelace, foi uma matemática e escritora inglesa reconhecida por ter escrito o primeiro algoritmo para ser processado por uma máquina" },
     { "id": 2, "name": "Alan Turing", "bio": "Alan Turing foi um matemático, cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico, ele é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial" },
     { "id": 3, "name": "Nikola Tesla", "bio": "Nikola Tesla foi um inventor, engenheiro eletrotécnico e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada." },
@@ -29,7 +29,8 @@ let lista: Object = [
 ];
 
 function criarTabela() {
-    const tabelaCorpo = document.getElementById('tabelaCorpo');
+    const tabelaCorpo= (<HTMLTableElement>document.getElementById('tabelaCorpo'));
+
 
     for (let i = 0; i < lista.length; i++) {
         const linha = tabelaCorpo.insertRow();
@@ -65,7 +66,7 @@ function pegarBioPeloID(id: number): string | null {
 
 function consultarBiografia() {
     const consultaId = parseInt((document.getElementById('consultaId') as HTMLInputElement).value);
-    const consultaResultado = document.getElementById('consultaResultado');
+    const consultaResultado = (<HTMLElement>document.getElementById('consultaResultado'));
 
     const biografia = pegarBioPeloID(consultaId);
 
@@ -88,7 +89,7 @@ function pegarNomePeloID(id: number): string | null {
 
 function consultarNomePorID() {
     const consultaNomeId = parseInt((document.getElementById('consultaNomeId') as HTMLInputElement).value);
-    const consultaNomeResultado = document.getElementById('consultaNomeResultado');
+    const consultaNomeResultado = (<HTMLElement>document.getElementById('consultaNomeResultado'));
 
     const nome = pegarNomePeloID(consultaNomeId);
 
@@ -113,7 +114,7 @@ function apagarItem() {
 
     apagarItemPeloID(apagarId);
 
-    const tabelaCorpo = document.getElementById('tabelaCorpo');
+    const tabelaCorpo = (<HTMLTableElement>document.getElementById('tabelaCorpo'));
     const linhas = tabelaCorpo.getElementsByTagName('tr');
 
     for (let i = 0; i < linhas.length; i++) {
@@ -146,7 +147,7 @@ function alterarItem() {
 
     alterarItemPeloID(alterarId, novoNome, novaBio);
 
-    const tabelaCorpo = document.getElementById('tabelaCorpo');
+    const tabelaCorpo = (<HTMLTableElement>document.getElementById('tabelaCorpo'));
     const linhas = tabelaCorpo.getElementsByTagName('tr');
 
     for (let i = 0; i < linhas.length; i++) {

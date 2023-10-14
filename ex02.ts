@@ -159,10 +159,10 @@ function alterarItemPeloIDFuncional(id: number, novoNome?: string, novaBio?: str
 function alterarItemPeloIDImperativo(id: number, novoNome?: string, novaBio?: string): void {
     for (let i = 0; i < listaDePessoas.length; i++) {
         if (listaDePessoas[i].id === id) {
-            if (novoNome !== undefined) {
+            if (novoNome) {
                 listaDePessoas[i].name = novoNome;
             }
-            if (novaBio !== undefined) {
+            if (novaBio) {
                 listaDePessoas[i].bio = novaBio;
             }
             break;

@@ -147,7 +147,7 @@ function alterarItem() {
     if (novoNome !== '' || novaBio !== '') {
         alterarItemPeloID(alterarId, novoNome, novaBio);
 
-        const tabelaCorpo = document.getElementById('tabelaCorpo');
+        const tabelaCorpo = (<HTMLTableElement>document.getElementById('tabelaCorpo'));
         const linhas = tabelaCorpo.getElementsByTagName('tr');
 
         for (let i = 0; i < linhas.length; i++) {

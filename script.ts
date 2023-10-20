@@ -129,10 +129,10 @@ function alterarItemPeloID(id: number, novoNome?: string, novaBio?: string): voi
     const pessoa = listaDePessoas.find((item) => item.id === id);
 
     if (pessoa) {
-        if (novoNome !== undefined) {
+        if (novoNome) {
             pessoa.name = novoNome;
         }
-        if (novaBio !== undefined) {
+        if (novaBio) {
             pessoa.bio = novaBio;
         }
     }

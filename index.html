@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+<body>
+
+    <h1>Exercício 01 - Contando Vogais</h1>
+    <div>
+        <input type="text" name="palavra" id="palavra">
+        <input type="button" value="Contar" onclick="suporteParaOClique()"> 
+        <div id="resultado">Resultado</div>
+    </div>
+
+    <h1>Exercício 02 - Manipulando um Array</h1>
+    <div id="tabelaContainer">
+        <table id="minhaTabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Biografia</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaCorpo">
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Consultar Biografia por ID</h2>
+    <div>
+        <label for="consultaId">Consultar por ID:</label>
+        <input type="text" id="consultaId" name="consultaId">
+        <input type="button" value="Consultar" onclick="consultarBiografia()">
+        <div id="consultaResultado"></div>
+    </div>
+
+    <h2>Consultar Nome por ID</h2>
+    <div>
+        <label for="consultaNomeId">Consultar Nome por ID:</label>
+        <input type="text" id="consultaNomeId" name="consultaNomeId">
+        <input type="button" value="Consultar Nome" onclick="consultarNomePorID()">
+    <div id="consultaNomeResultado"></div>
+    </div>
+
+    <h2>Apagar Item por ID</h2>
+    <div>
+        <label for="apagarId">Apagar Item por ID:</label>
+        <input type="text" id="apagarId" name="apagarId">
+        <input type="button" value="Apagar" onclick="apagarItem()">
+    </div>
+
+    <h2>Alterar Item por ID</h2>
+    <div>
+        <label for="alterarId">ID:</label>
+        <input type="text" id="alterarId" name="alterarId">
+        <label for="novoNome">Novo Nome:</label>
+        <input type="text" id="novoNome" name="novoNome">
+        <label for="novaBio">Nova Biografia:</label>
+        <input type="text" id="novaBio" name="novaBio">
+        <input type="button" value="Alterar" onclick="alterarItem()">
+    </div>
+    
+    
+
+
+</body>
+</html>

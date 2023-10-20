@@ -129,10 +129,10 @@ function alterarItemPeloID(id: number, novoNome?: string, novaBio?: string): voi
     const pessoa = listaDePessoas.find((item) => item.id === id);
 
     if (pessoa) {
-        if (novoNome !== undefined) {
+        if (novoNome) {
             pessoa.name = novoNome;
         }
-        if (novaBio !== undefined) {
+        if (novaBio) {
             pessoa.bio = novaBio;
         }
     }
@@ -143,18 +143,25 @@ function alterarItem() {
     const novoNome = (document.getElementById('novoNome') as HTMLInputElement).value;
     const novaBio = (document.getElementById('novaBio') as HTMLInputElement).value;
 
+    
+    if (novoNome !== '' || novaBio !== '') {
+        alterarItemPeloID(alterarId, novoNome, novaBio);
 
-    alterarItemPeloID(alterarId, novoNome, novaBio);
+        const tabelaCorpo = document.getElementById('tabelaCorpo');
+        const linhas = tabelaCorpo.getElementsByTagName('tr');
 
-    const tabelaCorpo = (<HTMLTableElement>document.getElementById('tabelaCorpo'));
-    const linhas = tabelaCorpo.getElementsByTagName('tr');
-
-    for (let i = 0; i < linhas.length; i++) {
-        const cells = linhas[i].getElementsByTagName('td');
-        if (cells[0].innerHTML === alterarId.toString()) {
-            cells[1].innerHTML = novoNome;
-            cells[2].innerHTML = novaBio;
-            break;
+        for (let i = 0; i < linhas.length; i++) {
+            const cells = linhas[i].getElementsByTagName('td');
+            if (cells[0].innerHTML === alterarId.toString()) {
+                
+                if (novoNome !== '') {
+                    cells[1].innerHTML = novoNome;
+                }
+                if (novaBio !== '') {
+                    cells[2].innerHTML = novaBio;
+                }
+                break;
+            }
         }
     }
 }

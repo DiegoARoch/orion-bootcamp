@@ -100,10 +100,10 @@ function apagarItem() {
 function alterarItemPeloID(id, novoNome, novaBio) {
     const pessoa = listaDePessoas.find((item) => item.id === id);
     if (pessoa) {
-        if (novoNome !== undefined) {
+        if (novoNome) {
             pessoa.name = novoNome;
         }
-        if (novaBio !== undefined) {
+        if (novaBio) {
             pessoa.bio = novaBio;
         }
     }
@@ -112,15 +112,21 @@ function alterarItem() {
     const alterarId = parseInt(document.getElementById('alterarId').value);
     const novoNome = document.getElementById('novoNome').value;
     const novaBio = document.getElementById('novaBio').value;
-    alterarItemPeloID(alterarId, novoNome, novaBio);
-    const tabelaCorpo = document.getElementById('tabelaCorpo');
-    const linhas = tabelaCorpo.getElementsByTagName('tr');
-    for (let i = 0; i < linhas.length; i++) {
-        const cells = linhas[i].getElementsByTagName('td');
-        if (cells[0].innerHTML === alterarId.toString()) {
-            cells[1].innerHTML = novoNome;
-            cells[2].innerHTML = novaBio;
-            break;
+    if (novoNome !== '' || novaBio !== '') {
+        alterarItemPeloID(alterarId, novoNome, novaBio);
+        const tabelaCorpo = document.getElementById('tabelaCorpo');
+        const linhas = tabelaCorpo.getElementsByTagName('tr');
+        for (let i = 0; i < linhas.length; i++) {
+            const cells = linhas[i].getElementsByTagName('td');
+            if (cells[0].innerHTML === alterarId.toString()) {
+                if (novoNome !== '') {
+                    cells[1].innerHTML = novoNome;
+                }
+                if (novaBio !== '') {
+                    cells[2].innerHTML = novaBio;
+                }
+                break;
+            }
         }
     }
 }
